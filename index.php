@@ -1,0 +1,137 @@
+<?php
+$server = "localhost";
+  $username = "root";
+  $password = "";
+  $database_name = "india_eduaction";
+
+  $con = mysqli_connect($server, $username, $password, $database_name);
+
+  if(!$con){
+    die("connection to the database failed due to" .  mysqli_connect_error());
+  }
+  //echo "Success Connecting to the db";
+
+
+  $name = $_POST['name'];
+  $mobile_no = $_POST['mobile no.'];
+  $email = $_POST['email'];
+  $graduation_year = $_POST['graduation_year'];
+  $other = $_POST['other info'];
+  $sql = "INSERT INTO education (`S_no`, `Name`, `mobile no.`, `email`, `graduation year`, `other info`, `dt`) VALUES ( '$name', '$mobile_no', '$email', '$graduation_year', '$other', current_timestamp());";
+  // echo $sql
+ 
+  $con->query($sql)
+$con->close();
+ 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatile" content="IE=edege">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FutureOfEducation</title>
+</head>
+
+<body>
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="https://thumbs.dreamstime.com/b/print-173746835.jpg" alt="Logo"></div>
+            <li><a href="#home"> Home </a></li>
+            <li><a href="#about"> About </a></li>
+            <li><a href="#services"> Service </a></li>
+            <li><a href="#contact"> Contact Us</a></li>
+        </ul>
+        <div class="rightNav v-class-resp">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">search</button>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+    </nav>
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big"> <u>The future of Education is here</u></p>
+                <p class="text-small">Future educators will have to face the fact that students will need (and want) to learn in a flexible, personalized format — for some, this may mean having a more technology-focused classroom.</p>
+                <div class="buttons">
+                    <button class="btn">Subscribe</button>
+                    <button class="btn">Watch Vedio</button>
+                </div>
+            </div>
+            <div class="secondHalf">
+                <img src="https://media.istockphoto.com/photos/man-working-with-a-broken-laptop-computer-on-office-business-picture-id1199644391?k=20&m=1199644391&s=612x612&w=0&h=z3kP1AUIYCJJ_fDhP9178yVaopzvVRXo6vTQyylTHkw=" alt="Laptop Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="paras">
+            <p class="sectionTag text-big"> The end of search is here</p>
+            <p class="sectionSubTag text-small">A form of distance education in which a course or program is intentionally designed in advance to be delivered fully online. Faculty use pedagogical strategies for instruction, student engagement, and assessment that are specific to learning
+                in a virtual environment. man-working-with-a-broken-laptop-computer-on-office-business-picture-id1199644391?k Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugit, est dolores voluptate, corrupti possimus iste repudiandae,
+                doloremque officia nam voluptas fuga dicta. Laborum voluptas culpa voluptatibus. Optio sit fugiat eligendi iure, nihil animi illum odit vitae, magni nisi eius blanditiis accusamus est praesentium eum, ullam laudantium possimus repellat
+                quod illo porro quisquam pariatur voluptatum maxime. Dolorem pariatur, modi vel non itaque laudantium error facilis.</p>
+        </div>
+        <div class="thumbNail">
+            <img src="https://image.eztalks.com/2021/03-16/13/c642f79fdd592989e86adf2c2bb96195.jpg" alt="Laptop image" class="fluid">
+        </div>
+    </section>
+
+    <section class="section section-left" id="about">
+        <div class="paras">
+            <p class="sectionTag text-big"> Transforming Education in India
+            </p>
+            <p class="sectionSubTag text-small">In 2007, we built and established Hunar Ghar School. We work closely with our local operational partner Rajasthan Bal Kalyan Samiti (RBKS) to provide an inclusive and holistic education for over 400 children aged between four and fourteen
+                through Hunar Ghar. Most of these children are the first in their families to attend school. Our approach at Hunar Ghar ensures that all students are supported to learn and develop a range of academic and life skills which will enable
+                them to make choices about their futures. We believe that good health and good learning go hand in hand. Our team has been trained to keep an eye on students’ health. We monitor their growth and development, ensure they are up to date
+                with all their vaccines and make sure each student has an annual health check by a paediatrician. An annual eye camp and an annual dental camp also take place at the school. There are high levels of malnutrition in Bakhel. To tackle this,
+                all students receive two nutritious meals a day, breakfast and lunch.</p>
+        </div>
+        <div class="thumbNail">
+            <img src="https://image.eztalks.com/2021/03-16/13/c642f79fdd592989e86adf2c2bb96195.jpg" alt="Laptop image" class="fluid">
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="paras">
+            <p class="sectionTag text-big">Let's Grow Together</p>
+            <p class="sectionSubTag text-small">Our communities are places where children experience happy, healthy and thriving childhoods that last a lifetime, and no child is left behind.To work in partnership with everyone important in children’s lives, sharing knowledge, skills and
+                resources, empowering families and enabling children through their relationships and in their communities to be nurtured, fulfilled, achieving and learning.We are currently seeking a temporary research assistant for a 10 week period beginning
+                in July 2022</p>
+        </div>
+        <div class="thumbNail">
+            <img src="https://image.eztalks.com/2021/03-16/13/c642f79fdd592989e86adf2c2bb96195.jpg" alt="Laptop image" class="fluid">
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <u><h2 class="text-center">Contact Us</h2></u>
+        <div class="form">
+            <form action="index.php" method="post">
+                <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your name">
+                <input class="form-input" type="text" name="mobile no." id="mobile no." placeholder="Enter Your Mobile No.">
+                <input class="form-input" type="text" name="email" id="email" placeholder="Enter Your email">
+                <input class="form-input" type="text" name="graduation_year" id="graduation_year" placeholder="Enter your Graduation year">
+                <textarea class="form-input" name="other info" id="other info" cols="30" rows="10" placeholder="Elaborate your concern"></textarea>
+                <button class="btn btn-dark" type = "submit" >Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="background">
+        <p class="Text-footer">
+            copyright &copy; 2022 www.FutureOfEducation - All Rights Reserved
+        </p>
+    </footer>
+    <script src="resp.js"></script>
+</body>
+
+</html>
